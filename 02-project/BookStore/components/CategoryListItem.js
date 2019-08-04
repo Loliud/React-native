@@ -3,10 +3,11 @@ import { Image, View, Text, StyleSheet } from 'react-native';
 import home from '../assets/Home.png';
 
 export default function CategoryListItem(props) {
+    const {category} = props;
     return (
         <View style={styles.box}>
-            <Text style={styles.textContent}>{props.title}</Text>
-            <Image style={styles.image} source={props.image} />
+            <Text style={styles.textContent}>{category.title}</Text>
+            <Image style={styles.image} source={category.image} />
         </View>
     );
 }
