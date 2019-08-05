@@ -74,12 +74,14 @@ export default class App extends Component {
     const {categories} = this.state;
     return (
       <View>
+        
           <FlatList 
             data={categories}
             renderItem={({item}) => <CategoryListItem category={item}/>}
             keyExtractor={(item) => `${item.id}`}
             contentContainerStyle={{paddingLeft: 16, paddingRight: 16}}
           />
+         
       </View>
     );
   }

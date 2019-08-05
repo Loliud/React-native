@@ -1,14 +1,22 @@
 import React from 'react';
-import { Image, View, Text, StyleSheet } from 'react-native';
+import { Image, View, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native';
 import home from '../assets/Home.png';
 
+
+const onTapButton = () =>{
+    Alert.alert('You tapped the button');
+}
+
+
 export default function CategoryListItem(props) {
-    const {category} = props;
+    const { category } = props;
     return (
-        <View style={styles.box}>
-            <Text style={styles.textContent}>{category.title}</Text>
-            <Image style={styles.image} source={category.image} />
-        </View>
+        <TouchableOpacity onPress={onTapButton}>
+            <View style={styles.box}>
+                <Text style={styles.textContent}>{category.title}</Text>
+                <Image style={styles.image} source={category.image} />
+            </View>
+        </TouchableOpacity>
     );
 }
 
@@ -24,7 +32,7 @@ const styles = StyleSheet.create({
 
     textContent: {
         fontWeight: "700",
-        marginBottom: 10,
+        paddingBottom: 10,
         textTransform: "uppercase",
         textShadowColor: '#000',
         textShadowOffset: { width: 0, height: 0 },
@@ -35,3 +43,4 @@ const styles = StyleSheet.create({
         width: 64
     }
 });
+
