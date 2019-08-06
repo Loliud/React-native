@@ -9,9 +9,9 @@ const onTapButton = () =>{
 
 
 export default function CategoryListItem(props) {
-    const { category } = props;
+    const { category, onPress } = props;
     return (
-        <TouchableOpacity onPress={onTapButton}>
+        <TouchableOpacity onPress={onPress}>
             <View style={styles.box}>
                 <Text style={styles.textContent}>{category.title}</Text>
                 <Image style={styles.image} source={category.image} />
